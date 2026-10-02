@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    string productName, price, discount, ship, units;
+    double unitPrice, quantity, discountPercentage, shippingFeePerbox, unitsPerBox;
+    double subtotal, discountAmount, discountedMerchandiseTotal;
+    double exactBoxes, boxesRequired;
+    double shippingTotal, finalAmountDue; 
+    
+    cout << "Enter Product: " ;
+    cin >> productName ;
+    
+    cout << "Enter Price: " ;
+    cin >> price ; 
+    
+    cout << "Enter Quantity: " ;
+    cin >> quantity ;
+    
+    cout << "Enter Discount: " ;
+    cin >> discount ;
+    
+    cout << "Enter ship/box: " ;
+    cin >> ship ;
+    
+    cout << "Enter units/box: " ;
+    cin >> units;
+    
+    subtotal = unitPrice * quantity;
+    discountAmount = subtotal * (discountPercentage / 100.0);
+    discountedMerchandiseTotal = subtotal - discountAmount;
+    exactBoxes = quantity / unitsPerBox;
+    boxesRequired = ceil(exactBoxes);
+    shippingTotal = boxesRequired * shippingFeePerbox;
+    finalAmountDue = discountedMerchandiseTotal + shippingTotal;
+    
+    cout << fixed << setprecision(2);
+    
+    cout << "\n\tRECEIPT" <<endl;
+    cout << "Product: " << productName <<endl;
+    cout << "Subtotal: " << subtotal <<endl;
+    cout << "Discount:" << discountAmount <<endl;
+    cout << "Merchandise: " << discountedMerchandiseTotal <<endl;
+    cout << "Exact boxes" << exactBoxes <<endl;
+    cout << "Boxes: " << boxesRequired <<endl;
+    cout << "Shipping:" << shippingTotal <<endl;
+    cout << "Amount due: " << finalAmountDue <<endl;
+    
+    return 0;
+}
