@@ -1,0 +1,31 @@
+  #include <iostream>
+  #include <cmath>
+  using namespace std;
+
+  int main()
+    {
+    double quiz;
+    double lab;
+    double project;
+    double exam;
+    double weightedGrade;
+
+    cout << "Enter quiz: ";
+    cin >> quiz;
+
+    cout << "Enter lab: ";
+    cin >> lab;
+
+    cout << "Enter project: ";
+    cin >> project;
+
+    cout << "Enter exam: ";
+    cin >> exam;
+
+    weightedGrade = (quiz * 0.20) + (lab * 0.20) + (project * 0.30) + (exam * 0.30);
+    int roundedGrade = static_cast<int>(round(weightedGrade));
+    
+    cout << "Weighted Grade: " << roundedGrade;
+
+    return 0;
+    }
